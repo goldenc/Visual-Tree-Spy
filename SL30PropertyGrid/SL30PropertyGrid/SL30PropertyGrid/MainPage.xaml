@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="SL30PropertyGrid.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+   xmlns:sysctl="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+	xmlns:slg="clr-namespace:SL30PropertyGrid" >
+	<Grid x:Name="LayoutRoot" Background="White">
+
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="200" MinWidth="100"/>
+			<ColumnDefinition Width="Auto"/>
+			<ColumnDefinition/>
+		</Grid.ColumnDefinitions>
+
+		<Grid.RowDefinitions>
+			<RowDefinition/>
+		</Grid.RowDefinitions>
+
+		<Grid Grid.Column="0">
+			<Button x:Name="test" Content="Toggle Selected Object" Click="test_Click"/>
+		</Grid>
+
+		<sysctl:GridSplitter Grid.Column="1"
+				IsTabStop="False"
+				HorizontalAlignment="Left"
+				VerticalAlignment="Stretch"
+				Background="White"
+				ShowsPreview="False"
+				Width="10"/>
+
+		<slg:PropertyGrid Grid.Column="2" x:Name="propertyGrid" DefaultLabelWidth="200"/>
+
+	</Grid>
+</UserControl>
